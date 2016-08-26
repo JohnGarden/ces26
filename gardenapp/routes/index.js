@@ -13,7 +13,7 @@ router.post('/myaction', function (req, res) {
   router.use(bodyParser.json());
   const form = req.body;
   fs.appendFile('db.txt', JSON.stringify({ first_name: form.first_name, last_name: form.last_name }), (err) => {
-      res.send('successfully registered')
+      res.send('successfully registered. Database /db.txt')
   })
 })
 

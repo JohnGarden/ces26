@@ -1,18 +1,29 @@
 <h1>CES-26</h1>
 
+<h2>TAREFA 1</h2>
+<P>exemplo que demonstra o aprendizado e integração.</P>
+
+<h2>TAREFA 2</h2>
+<P>programa Javascript que explore a interface DOM. </P>
+
+<P> 
+  Cria e remove elementos. <br>
+  Modifica elementos. <br>
+  Acrescenta manipuladores de eventos.
+</P>
+
 <p id="demo">Paragraph</p>
 <button type="button" onclick="myFunction()">Change Paragraph</button>
 <button type="button" onclick="removeFunction()">Remove paragraph</button>
 <button type="button" onclick="createFunction()">Create paragraph</button>
 
-
+<h2>TAREFA 3</h2>
 
 <form action="http://127.0.0.1:3000/myaction" method="post">
   First Name: <input type="text" id="first_name" name="first_name"> <br>
   Last Name: <input type="text" id="last_name" name="last_name">
   <input type="submit" value="Submit">
 </form>
-
 
 <script>
   function myFunction() {
@@ -36,8 +47,8 @@
   // run this function when the document is loaded
   window.onload = function() {
     // create a couple of elements in an otherwise empty HTML page
-    var heading = document.createElement("h1");
-    var heading_text = document.createTextNode("Big Head!");
+    var heading = document.createElement("h3");
+    var heading_text = document.createTextNode("Elemento criado ao carregar a página");
     heading.appendChild(heading_text);
     document.body.appendChild(heading); 
   }
