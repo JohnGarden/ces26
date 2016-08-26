@@ -1,0 +1,44 @@
+<h1>CES-26</h1>
+
+<p id="demo">Paragraph</p>
+<button type="button" onclick="myFunction()">Change Paragraph</button>
+<button type="button" onclick="removeFunction()">Remove paragraph</button>
+<button type="button" onclick="createFunction()">Create paragraph</button>
+
+
+
+<form action="http://127.0.0.1:3000/myaction" method="post">
+  First Name: <input type="text" id="first_name" name="first_name"> <br>
+  Last Name: <input type="text" id="last_name" name="last_name">
+  <input type="submit" value="Submit">
+</form>
+
+
+<script>
+  function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+  }
+
+  function removeFunction() {
+    document.getElementById("demo").innerHTML = "";
+  }
+
+  function createFunction() {
+    var paragraph = document.createElement("p");
+    var paragraph_text = document.createTextNode("New Paragraph");
+    paragraph.appendChild(paragraph_text);
+    document.body.appendChild(paragraph); 
+  }
+
+</script>
+
+<script>
+  // run this function when the document is loaded
+  window.onload = function() {
+    // create a couple of elements in an otherwise empty HTML page
+    var heading = document.createElement("h1");
+    var heading_text = document.createTextNode("Big Head!");
+    heading.appendChild(heading_text);
+    document.body.appendChild(heading); 
+  }
+</script>
