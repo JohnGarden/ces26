@@ -1,0 +1,55 @@
+<h2>TAREFA 4</h2>
+<h3>Criar um exemplo com Jquery. </h3>
+<ul>
+  <li>Explorar operações para percorrer a árvore DOM. </li>
+  <li>Explorar efeitos (animação, fading,...). </li>
+  <li>Carregar um arquivo JSON e atualizar parte do conteúdo da página com o conteúdo recebido. </li>
+  
+</ul>
+
+<div>
+  <button id="effects-btn">Efeitos</button>
+  <br>
+</div>
+<div id="effects" style="display: none">
+  <h1> Efeitos </h1>
+</div>
+
+<div>
+  <br>
+  <button id="load-btn">Carregar JSON</button>  
+</div>
+
+
+<div id="load">
+  
+</div>
+
+<div>
+  <br>
+</div>
+
+<div id="mouse">
+ <h3>Append when mouse enter <br></h3> 
+</div>
+
+<script>
+  $(document).ready(function(){
+    $("#effects-btn").click(function(){
+      $("#effects").fadeIn(3000).slideUp(500).slideDown(2000);
+    });
+
+    $("#load-btn").click(function(){
+      $("#load").load("/json/text.txt");
+    });
+
+    $("#mouse").on({
+      mouseenter:function(){
+        $(this).append("Mouse Enter\<br>");
+      }
+    });
+  });
+
+  
+
+</script>

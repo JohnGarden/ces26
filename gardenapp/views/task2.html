@@ -1,0 +1,32 @@
+<h2>TAREFA 2</h2>
+<P>programa Javascript que explore a interface DOM. </P>
+
+<P> 
+  Cria e remove elementos. <br>
+  Modifica elementos. <br>
+  Acrescenta manipuladores de eventos.
+</P>
+
+<p id="demo">Paragraph</p>
+<button type="button" onclick="myFunction()">Change Paragraph</button>
+<button type="button" onclick="removeFunction()">Remove paragraph</button>
+<button type="button" onclick="createFunction()">Create paragraph</button>
+
+
+<script>
+  function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+  }
+
+  function removeFunction() {
+    document.getElementById("demo").innerHTML = "";
+  }
+
+  function createFunction() {
+    var paragraph = document.createElement("p");
+    var paragraph_text = document.createTextNode("New Paragraph");
+    paragraph.appendChild(paragraph_text);
+    document.body.appendChild(paragraph); 
+  }
+
+</script>

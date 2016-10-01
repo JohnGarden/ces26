@@ -1,0 +1,5 @@
+<div>
+  ARQUIVO CARREGADO POR JSON <br>
+  caminho do arquivo <br>
+  /public/json/text.txt <br>
+</div>

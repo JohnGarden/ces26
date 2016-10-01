@@ -5,7 +5,32 @@ const fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'CES-26' });
+});
+
+/* GET task1 page. */
+router.get('/task1', function(req, res, next) {
+  res.render('task1.jade', { title: 'Tarefa 1' });
+});
+
+/* GET task2 page. */
+router.get('/task2', function(req, res, next) {
+  res.render('task2.jade', { title: 'Tarefa 2' });
+});
+
+/* GET task3 page. */
+router.get('/task3', function(req, res, next) {
+  res.render('task3.jade', { title: 'Tarefa 3' });
+});
+
+/* GET task4 page. */
+router.get('/task4', function(req, res, next) {
+  res.render('task4.jade', { title: 'Tarefa 4' });
+});
+
+/* GET task5 page. */
+router.get('/task5', function(req, res, next) {
+  res.render('task5.jade', { title: 'Tarefa 5' });
 });
 
 /* Save form information to database */
