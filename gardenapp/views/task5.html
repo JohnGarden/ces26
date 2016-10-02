@@ -1,0 +1,63 @@
+
+<h2>TAREFA 5</h2>
+<h3>Criar uma aplicação angularJs. </h3>
+<ul>
+  <li> Criar uma página que lê um string. </li>
+  <li> Criar um controller que indica se o string é um palíndromo. </li>
+  <li> Se for um palíndromo incluir o string em uma tabela. Exibir a tabela na página. </li>
+</ul>
+
+
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+  Digite uma string <input type="text" ng-model="stringEntry"><br>
+  <br>
+  String digitada: {{ stringEntry }}
+
+  <p>
+    Palíndromo: {{ result }}
+  </p>
+
+  <button type="button" ng-click="isPalindrome();">Palíndromo?</button>
+
+  <br><br><br>
+
+  <div>
+    <table style="border: 1px solid #ddd">
+      <tr><th>Palindromos encontrados</th></tr>
+      <tr ng-repeat="entry in entryList">
+        <td> {{entry.palindrome}} </td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+<script>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope) {
+    
+      $scope.stringEntry = "";
+      $scope.check = "";
+      $scope.result = "Resultado";
+
+      $scope.entryList = [
+        {palindrome: "ovo"}
+      ];
+      
+      $scope.isPalindrome = function() {
+        var str = $scope.stringEntry;
+        var check = str === str.split('').reverse().join('');
+        if (check) {
+          $scope.result = "É palíndromo";
+          $scope.entryList.push({palindrome: str});
+        } else  {
+          $scope.result = "Não é palíndromo";
+        };
+
+      }
+
+
+  });
+</script>
