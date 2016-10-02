@@ -33,6 +33,11 @@ router.get('/task5', function(req, res, next) {
   res.render('task5.jade', { title: 'Tarefa 5' });
 });
 
+/* GET task6 page. */
+router.get('/task6', function(req, res, next) {
+  res.render('task6.jade', { title: 'Tarefa 6' });
+});
+
 /* Save form information to database */
 router.post('/myaction', function (req, res) {  
   router.use(bodyParser.json());
