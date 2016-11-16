@@ -14,6 +14,10 @@
   <input type="submit" value="Submit">
 </form>
 
+<div id="show-db">
+  
+</div>
+
 
 
 <script>
@@ -24,7 +28,39 @@
     var heading_text = document.createTextNode("Elemento criado ao carregar a página");
     heading.appendChild(heading_text);
     document.body.appendChild(heading); 
+
+    var file = "db.txt";
+    readTextFile(file);
+
   }
+
+  function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                // var str = JSON.stringify(allText, null, 2);
+                // var str = JSON.parse(allText);
+                // alert(str);
+
+                var suga = JSON.parse(allText, function(k, v) {
+                  console.log(k); // exibe o log do nome da propriedade atual, a ultima propriedade é "".
+                  $('#show-db').append(v);                  
+                  return v;       // retorna os valores sem nenhuma alteração.
+                });
+
+                $('#show-db').append(suga);
+            }
+        }
+    }
+    rawFile.send(null);
+}
 </script>
 
 
