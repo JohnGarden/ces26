@@ -19,9 +19,9 @@ TodoApp
 	- TodoForm
 */
 var todoItems = [];
-todoItems.push({ index: 1, value: "learn react", done: false });
-todoItems.push({ index: 2, value: "Go shopping", done: true });
-todoItems.push({ index: 3, value: "buy flowers", done: true });
+todoItems.push({ index: 1, value: "Terminar Tarefa de CES-26", done: true });
+todoItems.push({ index: 2, value: "Enviar para o Professor", done: false });
+todoItems.push({ index: 3, value: "Gravar video demonstrativo", done: false });
 
 var TodoList = function (_React$Component) {
   _inherits(TodoList, _React$Component);
@@ -36,7 +36,14 @@ var TodoList = function (_React$Component) {
     var _this2 = this;
 
     var items = this.props.items.map(function (item, index) {
-      return React.createElement(TodoListItem, { key: index, item: item, index: index, removeItem: _this2.props.removeItem, markTodoDone: _this2.props.markTodoDone });
+      return React.createElement(TodoListItem, 
+      {
+         key: index, 
+         item: item, 
+         index: index, 
+         removeItem: _this2.props.removeItem, 
+         markTodoDone: _this2.props.markTodoDone 
+      });
     });
     return React.createElement(
       "ul",
@@ -81,7 +88,12 @@ var TodoListItem = function (_React$Component2) {
       React.createElement(
         "div",
         { className: todoClass },
-        React.createElement("span", { className: "glyphicon glyphicon-ok icon", "aria-hidden": "true", onClick: this.onClickDone }),
+        React.createElement("span", 
+          { 
+            className: "glyphicon glyphicon-ok icon", 
+            "aria-hidden": "true", 
+            onClick: this.onClickDone 
+          }),
         this.props.item.value,
         React.createElement(
           "button",
@@ -125,11 +137,17 @@ var TodoForm = function (_React$Component3) {
     return React.createElement(
       "form",
       { ref: "form", onSubmit: this.onSubmit, className: "form-inline" },
-      React.createElement("input", { type: "text", ref: "itemName", className: "form-control", placeholder: "add a new todo..." }),
+      React.createElement("input", 
+        { 
+          type: "text", 
+          ref: "itemName", 
+          className: "form-control", 
+          placeholder: "Adicione um novo item" 
+        }),
       React.createElement(
         "button",
         { type: "submit", className: "btn btn-default" },
-        "Add"
+        "Adicionar"
       )
     );
   };
@@ -150,7 +168,7 @@ var TodoHeader = function (_React$Component4) {
     return React.createElement(
       "h1",
       null,
-      "Todo list"
+      "Lista de Tarefas"
     );
   };
 
